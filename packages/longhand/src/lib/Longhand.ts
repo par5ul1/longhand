@@ -1,4 +1,4 @@
-import { KebabCaseCSSStyleDeclaration } from "../types/CSSStyleDeclarations/KebabCaseCSSStyleDeclaration";
+import { LonghandStylesProperty } from "../types";
 import { LonghandOptions } from "../types/LonghandOptions";
 import { camelToKebab } from "../utils/convertCases";
 import getExpandedStyles from "../utils/getExpandedStyles";
@@ -25,11 +25,7 @@ export default class Longhand {
     return this._options;
   }
 
-  public parse(
-    property: (keyof CSSStyleDeclaration | keyof KebabCaseCSSStyleDeclaration) &
-      string,
-    value: string
-  ) {
+  public parse(property: LonghandStylesProperty, value: string) {
     if (value === "") {
       throw new Error(`Value cannot be empty.`);
     }

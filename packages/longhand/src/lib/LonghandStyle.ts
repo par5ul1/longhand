@@ -1,15 +1,14 @@
-import { KebabCaseCSSStyleDeclaration } from "../types/CSSStyleDeclarations/KebabCaseCSSStyleDeclaration";
-import { LonghandStyles } from "../types/LonghandStyles";
+import {
+  LonghandStyles,
+  LonghandStylesProperty,
+} from "../types/LonghandStyles";
+
 import { kebabToCamel } from "../utils/convertCases";
 
 // TODO: JSDoc
 // TODO: Test all getters
 export default class LonghandStyle {
-  private readonly _originalProperty: (
-    | keyof CSSStyleDeclaration
-    | keyof KebabCaseCSSStyleDeclaration
-  ) &
-    string;
+  private readonly _originalProperty: LonghandStylesProperty;
   private readonly _originalValue: string;
   private readonly _styles: LonghandStyles;
 

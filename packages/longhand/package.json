@@ -10,6 +10,16 @@
     "build": "bun build src/index.ts --minify --outdir dist && bun run build:declarations",
     "build:declarations": "tsc --emitDeclarationOnly --outDir dist"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.js"
+    }
+  },
   "keywords": [
     "longhand",
     "css",

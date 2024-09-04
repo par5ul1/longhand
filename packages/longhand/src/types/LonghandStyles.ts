@@ -11,3 +11,9 @@ export type LonghandStyles = {
     NoNonStringsInValue<PropertyOnlyCSSStyleDeclaration>
   >;
 };
+
+export type LonghandStylesProperty = (
+  | keyof CSSStyleDeclaration
+  | keyof KebabCaseCSSStyleDeclaration
+) &
+  string;
