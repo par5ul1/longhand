@@ -4,11 +4,28 @@ import { camelToKebab } from "../utils/convertCases";
 import getExpandedStyles from "../utils/getExpandedStyles";
 import LonghandStyle from "./LonghandStyle";
 
-// TODO: JSDoc
+/**
+ * The Longhand class. Handles parsing CSS properties into their longhand equivalents.
+ * @returns {Longhand} The Longhand class instance.
+ */
 export default class Longhand {
+  /**
+   * This should not be used directly. Use the {@link options} getter instead.
+   * @private
+   * @readonly
+   */
   private readonly _options: LonghandOptions | undefined;
 
+  /**
+   * Creates a new instance of the Longhand class with no options.
+   * @constructor
+   */
   constructor();
+  /**
+   * Creates a new instance of the Longhand class with the given options.
+   * @constructor
+   * @param {LonghandOptions} [options] - The {@link LonghandOptions | options} for the Longhand class.
+   */
   constructor(options: typeof this._options);
 
   constructor(options?: typeof this._options) {
@@ -21,10 +38,19 @@ export default class Longhand {
     this._options = options;
   }
 
+  /**
+   * @returns The options for the Longhand class.
+   */
   public get options(): LonghandOptions | undefined {
     return this._options;
   }
 
+  /**
+   * The parser method for the Longhand class. Parses a CSS property into its longhand equivalent, given a value.
+   * @param property - The CSS property to parse. Can be a camelCase or kebab-case.
+   * @param value - The value to parse.
+   * @returns The parsed style as an instance of the {@link LonghandStyle} class.
+   */
   public parse(property: LonghandStylesProperty, value: string) {
     if (value === "") {
       throw new Error(`Value cannot be empty.`);
@@ -60,6 +86,11 @@ export default class Longhand {
     );
   }
 
+  /**
+   * Static method for the {@link Longhand.prototype.parse} method.
+   * @param options - The {@link LonghandOptions | options} for the Longhand class.
+   * @see {@link Longhand.prototype.parse}
+   */
   public static parse(
     property: Parameters<Longhand["parse"]>[0],
     value: Parameters<Longhand["parse"]>[1],
