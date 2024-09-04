@@ -1,0 +1,28 @@
+{
+  "name": "longhand",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "turbo build"
+  },
+  "keywords": [
+    "longhand",
+    "css",
+    "shorthand",
+    "parser",
+    "css shorthand parser"
+  ],
+  "author": "Parsa Rahimi <mail@parsuli.net> (http://parsuli.net/)",
+  "repository": {
+    "type": "git",
+    "url": "TODO"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bun": "^1.1.26",
+    "turbo": "^2.1.1",
+    "typescript": "^5.5.4"
+  }
+}
