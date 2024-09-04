@@ -1,6 +1,4 @@
 {
-  "name": "longhand",
-  "version": "1.0.0",
   "description": "A CSS shorthand parser",
   "main": "index.js",
   "scripts": {

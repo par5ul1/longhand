@@ -1,5 +1,5 @@
 {
-  "name": "@longhand/core",
+  "name": "longhand",
   "version": "1.0.0",
   "description": "A CSS shorthand parser for the browser",
   "main": "dist/index.js",
