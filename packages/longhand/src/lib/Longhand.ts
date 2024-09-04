@@ -7,23 +7,18 @@ import LonghandStyle from "./LonghandStyle";
 // TODO: JSDoc
 export default class Longhand {
   private readonly _options: LonghandOptions | undefined;
-  private readonly _window: (Window & typeof globalThis) | undefined;
 
   constructor();
-  constructor(window: typeof this._window);
   constructor(options: typeof this._options);
-  constructor(options: typeof this._options, window: typeof this._window);
 
-  constructor(
-    arg0?: typeof this._options | typeof this._window,
-    arg1?: typeof this._window
-  ) {
-    if (arg0 instanceof Window) {
-      this._window = arg0;
-    } else {
-      this._options = arg0;
-      this._window = arg1;
+  constructor(options?: typeof this._options) {
+    if (typeof window === "undefined") {
+      throw new Error(
+        "`longhand` only works in the browser. See https://github.com/par5ul1/longhand for how to use it with a DOM emulator."
+      );
     }
+
+    this._options = options;
   }
 
   public get options(): LonghandOptions | undefined {
@@ -35,18 +30,6 @@ export default class Longhand {
       string,
     value: string
   ) {
-    if (this._window) {
-      window = this._window;
-      document = window.document;
-    }
-
-    // TODO: Test
-    if (typeof window === "undefined" || typeof document === "undefined") {
-      throw new Error(
-        "`longhand` only works in the browser. See https://github.com/par5ul1/longhand for how to use it with a DOM emulator."
-      );
-    }
-
     if (value === "") {
       throw new Error(`Value cannot be empty.`);
     }

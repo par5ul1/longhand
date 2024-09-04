@@ -1,5 +1,6 @@
+import { camelToKebab, kebabToCamel } from "./convertCases";
+
 import { LonghandStyles } from "../types/LonghandStyles";
-import { kebabToCamel } from "./convertCases";
 
 export default function getExpandedStyles(
   styles: CSSStyleDeclaration,
@@ -10,12 +11,18 @@ export default function getExpandedStyles(
     camelCaseStyles: {},
   };
 
-  for (let i = 0; i < styles.length; i++) {
-    const prop = styles.item(i); // Always in Kebab Case (see https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue#property)
+  const values =
+    "_values" in styles
+      ? Object.keys(styles._values as Record<string, string>) // JSDOM does not emulate CSSStyleDeclaration properly so we need a workaround
+      : Array(styles.length)
+          .fill(null)
+          .map((_, i) => styles.item(i));
+
+  for (let prop of values) {
     const value = styles.getPropertyValue(prop);
 
     if (!!value && (!ignoreInitial || value !== "initial")) {
-      (filteredStyles.kebabCaseStyles as any)[prop] = value;
+      (filteredStyles.kebabCaseStyles as any)[camelToKebab(prop)] = value;
       (filteredStyles.camelCaseStyles as any)[kebabToCamel(prop)] = value;
     }
   }
