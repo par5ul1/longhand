@@ -69,7 +69,9 @@ export default class LonghandStyle {
       Object.entries(this._styles.kebabCaseStyles).filter(
         ([key]) => key !== this._originalProperty
       )
-    );
+    ) as Readonly<
+      Record<keyof typeof this._styles.kebabCaseStyles & string, string>
+    >;
   }
   /**
    * @returns The parsed longhand properties as an array of kebab-cased properties. Returns an empty array if the original property has no longhand equivalents.
@@ -86,7 +88,9 @@ export default class LonghandStyle {
       Object.entries(this._styles.camelCaseStyles).filter(
         ([key]) => key !== kebabToCamel(this._originalProperty)
       )
-    );
+    ) as Readonly<
+      Record<keyof typeof this._styles.camelCaseStyles & string, string>
+    >;
   }
   /**
    * @returns The parsed longhand properties as an array of camelCased properties. Returns an empty array if the original property has no longhand equivalents.

@@ -6,9 +6,11 @@ type NoNonStringsInValue<T> = {
 };
 
 export type LonghandStyles = {
-  kebabCaseStyles: Partial<NoNonStringsInValue<KebabCaseCSSStyleDeclaration>>;
-  camelCaseStyles: Partial<
-    NoNonStringsInValue<PropertyOnlyCSSStyleDeclaration>
+  kebabCaseStyles: NonNullable<
+    Partial<NoNonStringsInValue<KebabCaseCSSStyleDeclaration>>
+  >;
+  camelCaseStyles: NonNullable<
+    Partial<NoNonStringsInValue<PropertyOnlyCSSStyleDeclaration>>
   >;
 };
 
