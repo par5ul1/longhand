@@ -1,0 +1,414 @@
+[
+  {
+    "property": "all",
+    "value": "unset",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "animation",
+    "value": "3s ease-in 1s infinite reverse both running slidein",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "animation-range",
+    "value": "normal 0% 100%",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "background",
+    "value": "#f0f0f0 url('image.jpg') no-repeat center"
+  },
+  { "property": "border", "value": "1px solid black" },
+  {
+    "property": "border-block",
+    "value": "2px dashed red",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "border-block-end",
+    "value": "3px dotted blue",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "border-block-start",
+    "value": "4px double green",
+    "unsupported": {
+      "value": true
+    }
+  },
+  { "property": "border-bottom", "value": "5px groove orange" },
+  { "property": "border-color", "value": "red blue green yellow" },
+  {
+    "property": "border-image",
+    "value": "url('border.png') 30 round",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "border-inline",
+    "value": "6px inset purple",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "border-inline-end",
+    "value": "7px outset brown",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "border-inline-start",
+    "value": "8px ridge teal",
+    "unsupported": {
+      "value": true
+    }
+  },
+  { "property": "border-left", "value": "9px solid cyan" },
+  {
+    "property": "border-radius",
+    "value": "10px 20px 30px 40px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  { "property": "border-right", "value": "10px dashed magenta" },
+  { "property": "border-style", "value": "solid dashed dotted double" },
+  { "property": "border-top", "value": "11px solid lime" },
+  { "property": "border-width", "value": "thin medium thick 5px" },
+  {
+    "property": "column-rule",
+    "value": "4px double #ff00ff",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "columns",
+    "value": "3 200px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "contain-intrinsic-size",
+    "value": "200px 300px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "container",
+    "value": "size / inline-size",
+    "unsupported": {
+      "value": true
+    }
+  },
+  { "property": "flex", "value": "1 2 300px" },
+  {
+    "property": "flex-flow",
+    "value": "row-reverse wrap",
+    "unsupported": {
+      "value": true
+    }
+  },
+  { "property": "font", "value": "italic bold 12px/30px Georgia, serif" },
+  {
+    "property": "font-synthesis",
+    "value": "weight style small-caps",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "font-variant",
+    "value": "small-caps slashed-zero",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "gap",
+    "value": "10px 20px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "grid",
+    "value": "100px 1fr / 50px 1fr",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "grid-area",
+    "value": "2 / 1 / span 2 / span 3",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "grid-column",
+    "value": "1 / span 2",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "grid-row",
+    "value": "2 / 4",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "grid-template",
+    "value": "'a a a' 40px 'b c c' 40px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "inset",
+    "value": "10px 20px 30px 40px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "inset-block",
+    "value": "15px 25px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "inset-inline",
+    "value": "35px 45px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "list-style",
+    "value": "square inside url('bullet.png')",
+    "unsupported": {
+      "value": true
+    }
+  },
+  { "property": "margin", "value": "10px 20px 30px 40px" },
+  {
+    "property": "margin-block",
+    "value": "20px 30px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "margin-inline",
+    "value": "25px 35px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "mask",
+    "value": "url('mask.png') luminance",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "mask-border",
+    "value": "url('mask-border.png') 25 space",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "offset",
+    "value": "ray(45deg) 100px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "outline",
+    "value": "3px solid blue",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "overflow",
+    "value": "hidden visible",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "overscroll-behavior",
+    "value": "contain auto",
+    "unsupported": {
+      "value": true,
+      "property": true
+    }
+  },
+  { "property": "padding", "value": "10px 20px 30px 40px" },
+  {
+    "property": "padding-block",
+    "value": "15px 25px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "padding-inline",
+    "value": "20px 30px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "place-content",
+    "value": "space-between center",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "place-items",
+    "value": "center start",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "place-self",
+    "value": "end stretch",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "scroll-margin",
+    "value": "10px 20px 30px 40px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "scroll-margin-block",
+    "value": "15px 25px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "scroll-margin-inline",
+    "value": "20px 30px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "scroll-padding",
+    "value": "10px 20px 30px 40px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "scroll-padding-block",
+    "value": "15px 25px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "scroll-padding-inline",
+    "value": "20px 30px",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "scroll-timeline",
+    "value": "--scrollTimeline",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "text-decoration",
+    "value": "underline overline #FF3028",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "text-emphasis",
+    "value": "filled sesame #FFA500",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "text-wrap",
+    "value": "balance",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "transition",
+    "value": "width 2s, height 4s",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "view-timeline",
+    "value": "--viewTimeline block",
+    "unsupported": {
+      "value": true
+    }
+  },
+  {
+    "property": "-webkit-text-stroke",
+    "value": "2px red",
+    "unsupported": {
+      "value": true,
+      "property": true
+    }
+  },
+  {
+    "property": "-webkit-border-before",
+    "value": "5px dashed blue",
+    "unsupported": {
+      "value": true,
+      "property": true
+    }
+  },
+  {
+    "property": "-webkit-mask-box-image",
+    "value": "url('mask.png') 25 25 25 25 stretch stretch",
+    "unsupported": {
+      "value": true,
+      "property": true
+    }
+  }
+]
