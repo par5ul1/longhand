@@ -1,7 +1,6 @@
-import { camelToKebab } from "../utils/convertCases";
-
 import { LonghandStylesProperty } from "../types";
 import { LonghandOptions } from "../types/LonghandOptions";
+import { camelToKebab } from "../utils/convertCases";
 import getExpandedStyles from "../utils/getExpandedStyles";
 import LonghandStyle from "./LonghandStyle";
 
@@ -50,7 +49,7 @@ export default class Longhand {
    * Internal method for the Longhand class. Gets the raw HTML style with the given property and value applied.
    * @param property - The CSS property to apply.
    * @param value - The value to apply.
-   * > NOTE: This method is used internally by the {@link parse} method. While it is public, it will likely never be used directly.
+   * @note This method is used internally by the {@link parse} method. While it is public, it will likely never be used directly.
    */
   public _getRawHTMLStyleWithPropertyAndValueApplied(
     property: LonghandStylesProperty,

@@ -5,7 +5,6 @@ import {
 
 import { kebabToCamel } from "../utils/convertCases";
 
-// TODO: Test all getters
 /**
  * The LonghandStyle class. Represents a parsed CSS property, its value, and all its longhand components.
  * @returns {LonghandStyle} The LonghandStyle class instance.
@@ -48,21 +47,22 @@ export default class LonghandStyle {
   }
 
   /**
-   * @returns The original (shorthand) property of the parsed style.
+   * @returns {LonghandStylesProperty} The original (shorthand) property of the parsed style.
    */
   public get originalProperty() {
     return this._originalProperty;
   }
 
   /**
-   * @returns The original (shorthand) value of the parsed style.
+   * @returns {string} The original (shorthand) value of the parsed style.
    */
   public get originalValue() {
     return this._originalValue;
   }
 
   /**
-   * @returns The parsed longhand styles as a map of kebab-cased properties to their values. Returns an empty map if the original property has no longhand equivalents.
+   * @returns The parsed longhand styles as a map of kebab-cased properties to their values
+   * @returns An empty map if the original property has no longhand equivalents.
    */
   public get kebabCaseStyles() {
     return Object.fromEntries(
@@ -74,14 +74,16 @@ export default class LonghandStyle {
     >;
   }
   /**
-   * @returns The parsed longhand properties as an array of kebab-cased properties. Returns an empty array if the original property has no longhand equivalents.
+   * @returns {string[]} The parsed longhand properties as an array of kebab-cased properties
+   * @returns An empty array if the original property has no longhand equivalents.
    */
   public get kebabCaseProperties() {
     return Object.keys(this.kebabCaseStyles);
   }
 
   /**
-   * @returns The parsed longhand styles as a map of camelCased properties to their values. Returns an empty map if the original property has no longhand equivalents.
+   * @returns The parsed longhand styles as a map of camelCased properties to their values
+   * @returns An empty map if the original property has no longhand equivalents.
    */
   public get camelCaseStyles() {
     return Object.fromEntries(
@@ -93,14 +95,16 @@ export default class LonghandStyle {
     >;
   }
   /**
-   * @returns The parsed longhand properties as an array of camelCased properties. Returns an empty array if the original property has no longhand equivalents.
+   * @returns {string[]} The parsed longhand properties as an array of camelCased properties
+   * @returns An empty array if the original property has no longhand equivalents.
    */
   public get camelCaseProperties() {
     return Object.keys(this.camelCaseStyles);
   }
 
   /**
-   * @returns The parsed longhand styles as a map of both camelCased and kebab-cased properties to their values. Returns an empty map if the original property has no longhand equivalents.
+   * @returns The parsed longhand styles as a map of both camelCased and kebab-cased properties to their values
+   * @returns An empty map if the original property has no longhand equivalents.
    */
   public get styles() {
     return {
@@ -109,7 +113,8 @@ export default class LonghandStyle {
     };
   }
   /**
-   * @returns The parsed longhand properties as an array of both camelCased and kebab-cased properties. Returns an empty array if the original property has no longhand equivalents.
+   * @returns {string[]} The parsed longhand properties as an array of both camelCased and kebab-cased properties
+   * @returns An empty array if the original property has no longhand equivalents.
    */
   public get properties() {
     return [...this.kebabCaseProperties, ...this.camelCaseProperties];
@@ -125,7 +130,8 @@ export default class LonghandStyle {
   }
 
   /**
-   * @returns The length of the parsed longhand properties. Returns 0 if the original property has no longhand equivalents.
+   * @returns {number} The length of the parsed longhand properties
+   * @returns 0 if the original property has no longhand equivalents.
    */
   public get length() {
     return this.properties.length / 2; // To account for the camelCase and kebabCase properties
