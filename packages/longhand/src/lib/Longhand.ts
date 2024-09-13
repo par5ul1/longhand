@@ -1,6 +1,7 @@
+import { camelToKebab } from "../utils/convertCases";
+
 import { LonghandStylesProperty } from "../types";
 import { LonghandOptions } from "../types/LonghandOptions";
-import { camelToKebab } from "../utils/convertCases";
 import getExpandedStyles from "../utils/getExpandedStyles";
 import LonghandStyle from "./LonghandStyle";
 
@@ -46,12 +47,15 @@ export default class Longhand {
   }
 
   /**
-   * The parser method for the Longhand class. Parses a CSS property into its longhand equivalent, given a value.
-   * @param property - The CSS property to parse. Can be a camelCase or kebab-case.
-   * @param value - The value to parse.
-   * @returns The parsed style as an instance of the {@link LonghandStyle} class.
+   * Internal method for the Longhand class. Gets the raw HTML style with the given property and value applied.
+   * @param property - The CSS property to apply.
+   * @param value - The value to apply.
+   * > NOTE: This method is used internally by the {@link parse} method. While it is public, it will likely never be used directly.
    */
-  public parse(property: LonghandStylesProperty, value: string) {
+  public _getRawHTMLStyleWithPropertyAndValueApplied(
+    property: LonghandStylesProperty,
+    value: string
+  ) {
     if (value === "") {
       throw new Error(`Value cannot be empty.`);
     }
@@ -59,30 +63,42 @@ export default class Longhand {
     const element = document.createElement("div");
     const style = element.style;
 
-    // TODO: Test
     if (!(property in style)) {
       throw new Error(
-        `Property "${String(property)}" is not a valid CSS property.`
+        `Property \`${String(property)}\` is not a valid CSS property.`
       );
     }
 
-    // TODO: Test
     const kebabCaseProperty = camelToKebab(property);
 
     style.setProperty(kebabCaseProperty, value);
 
-    // TODO: Test
-    if (style[property as keyof CSSStyleDeclaration] !== value) {
+    if (
+      style[kebabCaseProperty as keyof CSSStyleDeclaration]?.toString()
+        .length === 0
+    ) {
       throw new Error(
-        `Value "${value}" is not a valid CSS value for property "${property}".`
+        `Value \`${value}\` is not a valid CSS value for property \`${property}\`.`
       );
     }
 
-    // TODO: Test empty string values
+    return style;
+  }
+
+  /**
+   * The parser method for the Longhand class. Parses a CSS property into its longhand equivalent, given a value.
+   * @param property - The CSS property to parse. Can be a camelCase or kebab-case.
+   * @param value - The value to parse.
+   * @returns The parsed style as an instance of the {@link LonghandStyle} class.
+   */
+  public parse(property: LonghandStylesProperty, value: string) {
     return new LonghandStyle(
       property,
       value,
-      getExpandedStyles(style, this.options?.ignoreInitial)
+      getExpandedStyles(
+        this._getRawHTMLStyleWithPropertyAndValueApplied(property, value),
+        this.options?.ignoreInitial
+      )
     );
   }
 

@@ -28,23 +28,23 @@ export default class LonghandStyle {
    * @private
    * @readonly
    */
-  private readonly _styles: LonghandStyles;
+  private readonly _originalStyles: LonghandStyles;
 
   /**
    * Creates a new instance of the LonghandStyle class.
    * @constructor
    * @param {LonghandStylesProperty} originalProperty - The original (shorthand) property of the parsed style.
    * @param {string} originalValue - The original (shorthand) value of the parsed style.
-   * @param {LonghandStyles} styles - The parsed {@link LonghandStyles | styles}.
+   * @param {LonghandStyles} originalStyles - The parsed {@link LonghandStyles | styles}.
    */
   constructor(
     originalProperty: typeof this._originalProperty,
     originalValue: typeof this._originalValue,
-    styles: typeof this._styles
+    originalStyles: typeof this._originalStyles
   ) {
     this._originalProperty = originalProperty;
     this._originalValue = originalValue;
-    this._styles = styles;
+    this._originalStyles = originalStyles;
   }
 
   /**
@@ -66,11 +66,11 @@ export default class LonghandStyle {
    */
   public get kebabCaseStyles() {
     return Object.fromEntries(
-      Object.entries(this._styles.kebabCaseStyles).filter(
+      Object.entries(this._originalStyles.kebabCaseStyles).filter(
         ([key]) => key !== this._originalProperty
       )
     ) as Readonly<
-      Record<keyof typeof this._styles.kebabCaseStyles & string, string>
+      Record<keyof typeof this._originalStyles.kebabCaseStyles & string, string>
     >;
   }
   /**
@@ -85,11 +85,11 @@ export default class LonghandStyle {
    */
   public get camelCaseStyles() {
     return Object.fromEntries(
-      Object.entries(this._styles.camelCaseStyles).filter(
+      Object.entries(this._originalStyles.camelCaseStyles).filter(
         ([key]) => key !== kebabToCamel(this._originalProperty)
       )
     ) as Readonly<
-      Record<keyof typeof this._styles.camelCaseStyles & string, string>
+      Record<keyof typeof this._originalStyles.camelCaseStyles & string, string>
     >;
   }
   /**
