@@ -32,5 +32,13 @@
     "type": "git",
     "url": "https://github.com/par5ul1/longhand.git/tree/main/packages/core"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/jsdom": "^21.1.7",
+    "jsdom": "^25.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }

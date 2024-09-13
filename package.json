@@ -1,8 +1,9 @@
 {
+  "name": "longhand",
   "description": "A CSS shorthand parser",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "turbo test",
     "build": "turbo build"
   },
   "keywords": [
