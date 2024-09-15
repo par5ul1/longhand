@@ -3,8 +3,6 @@
     "strict": true,
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "paths": {
-      "longhand/types": ["./node_modules/longhand/dist/types/index.js"]
-    }
+    "module": "NodeNext"
   }
 }
