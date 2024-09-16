@@ -28,6 +28,8 @@
 </sub></sup>
 </h1>
 
+<p align="center"><img src="https://img.shields.io/npm/v/longhand"/></p>
+
 `longhand` is a highly specialized CSS parser, focused on taking a shorthand style declaration -- such as `margin: 10px` -- and returning the implicit declarations that make up the shorthand (the _longhands_, if you will) -- such as `margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px`.
 
 ## Features
