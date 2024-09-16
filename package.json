@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "turbo test",
-    "build": "turbo build"
+    "build": "turbo build",
+    "publish": "turbo run build && turbo publish"
   },
   "keywords": [
     "longhand",
@@ -17,6 +18,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/par5ul1/longhand.git"
+  },
+  "bugs": {
+    "url": "https://github.com/par5ul1/longhand/issues"
   },
   "license": "MIT",
   "devDependencies": {

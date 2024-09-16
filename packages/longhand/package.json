@@ -9,7 +9,10 @@
     "test": "bun test",
     "build": "bun build src/index.ts --minify --outdir dist && bun run build:declarations",
     "build:declarations": "tsc --emitDeclarationOnly --outDir dist",
-    "build:docs": "jsdoc2md -c jsdoc.json --no-cache > DOCUMENTATION.md"
+    "build:docs": "jsdoc2md -c jsdoc.json --no-cache > DOCUMENTATION.md",
+    "prepare": "./scripts/prepare-publish.sh",
+    "publish": "bun run build && pnpm publish",
+    "postpack": "rm README.md"
   },
   "exports": {
     ".": {
@@ -21,6 +24,11 @@
       "import": "./dist/types/index.js"
     }
   },
+  "files": [
+    "dist",
+    "DOCUMENTATION.md",
+    "README.md"
+  ],
   "keywords": [
     "longhand",
     "css",
@@ -32,6 +40,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/par5ul1/longhand.git/tree/main/packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/par5ul1/longhand/issues"
   },
   "license": "MIT",
   "devDependencies": {
