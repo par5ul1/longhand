@@ -5,7 +5,7 @@
   "scripts": {
     "test": "turbo test",
     "build": "turbo build",
-    "publish": "turbo run build && turbo publish"
+    "publish": "turbo publish"
   },
   "keywords": [
     "longhand",
