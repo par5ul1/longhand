@@ -10,8 +10,8 @@
     "build": "bun build src/index.ts --minify --outdir dist && bun run build:declarations",
     "build:declarations": "tsc --emitDeclarationOnly --outDir dist",
     "build:docs": "jsdoc2md -c jsdoc.json --no-cache > DOCUMENTATION.md",
-    "prepare": "./scripts/prepare-publish.sh",
-    "publish": "bun run build && pnpm publish",
+    "prepare": "cp ../../README.md .",
+    "publish": "pnpm publish",
     "postpack": "rm README.md"
   },
   "exports": {
